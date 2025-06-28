@@ -1,6 +1,6 @@
 package com.maxi.debuggerduck.util
 
-object Constants {
+internal object Constants {
 
     const val DEBUGGER_DUCK_DATABASE = "debugger_duck_database"
     const val VERBOSE_LOGS_TABLE = "debugger_duck_verbose_logs"
