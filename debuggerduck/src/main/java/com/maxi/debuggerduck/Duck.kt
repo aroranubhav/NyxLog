@@ -1,6 +1,7 @@
 package com.maxi.debuggerduck
 
 import android.util.Log
+import com.maxi.debuggerduck.util.LogLevel
 
 object Duck {
 
