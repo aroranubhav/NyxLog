@@ -39,7 +39,7 @@ internal abstract class DebuggerDuckDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: DebuggerDuckDatabase? = null
 
-        fun getInstance(context: Context): Any {
+        fun getInstance(context: Context): DebuggerDuckDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room
                     .databaseBuilder(
