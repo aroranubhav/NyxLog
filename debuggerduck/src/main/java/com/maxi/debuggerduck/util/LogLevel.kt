@@ -1,4 +1,4 @@
-package com.maxi.debuggerduck
+package com.maxi.debuggerduck.util
 
 internal object LogLevel {
 
