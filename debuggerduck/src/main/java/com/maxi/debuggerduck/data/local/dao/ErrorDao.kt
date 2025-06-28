@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 internal interface ErrorDao {
 
     @Insert
-    suspend fun insertLog(log: String)
+    suspend fun insertLog(log: Error)
 
     @Query("SELECT * FROM $ERROR_LOGS_TABLE")
     fun getLogs(): Flow<List<Error>>

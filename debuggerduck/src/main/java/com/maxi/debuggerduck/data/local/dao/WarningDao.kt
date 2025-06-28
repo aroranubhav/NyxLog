@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 internal interface WarningDao {
 
     @Insert
-    suspend fun insertLog(log: String)
+    suspend fun insertLog(log: Warning)
 
     @Query("SELECT * FROM $WARNING_LOGS_TABLE")
     fun getLogs(): Flow<List<Warning>>

@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 internal interface DebugDao {
 
     @Insert
-    suspend fun insertLog(log: String)
+    suspend fun insertLog(log: Debug)
 
     @Query("SELECT * FROM $DEBUG_LOGS_TABLE")
     fun getLogs(): Flow<List<Debug>>

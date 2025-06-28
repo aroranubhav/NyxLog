@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 internal interface InfoDao {
 
     @Insert
-    suspend fun insertLog(log: String)
+    suspend fun insertLog(log: Info)
 
     @Query("SELECT * FROM $INFO_LOGS_TABLE")
     fun getLogs(): Flow<List<Info>>

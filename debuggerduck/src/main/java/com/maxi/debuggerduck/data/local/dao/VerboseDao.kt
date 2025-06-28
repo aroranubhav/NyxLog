@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 internal interface VerboseDao {
 
     @Insert
-    suspend fun insertLog(log: String)
+    suspend fun insertLog(log: Verbose)
 
     @Query("SELECT * FROM $VERBOSE_LOGS_TABLE")
     fun getLogs(): Flow<List<Verbose>>
