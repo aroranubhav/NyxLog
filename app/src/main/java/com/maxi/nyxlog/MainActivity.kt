@@ -38,7 +38,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun App(modifier: Modifier = Modifier) {
-    val duck = Duck.getInstance(LocalContext.current)
+    val context = LocalContext.current
+    val duck = Duck.getInstance(
+        context = context,
+        writeToFile = true
+    )
     Column(
         modifier = modifier
             .fillMaxSize()
