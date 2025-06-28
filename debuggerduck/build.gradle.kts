@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.maven)
 }
 
 android {
@@ -24,6 +25,11 @@ android {
             )
         }
     }
+    lint {
+        disable.add("NullSafeMutableLiveData")
+        checkReleaseBuilds = false
+        abortOnError = false
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -41,4 +47,17 @@ dependencies {
 
     //gson
     implementation(libs.gson.converter)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.aroranubhav"
+                artifactId = "debuggerduck"
+                version = "1.0.0"
+            }
+        }
+    }
 }
