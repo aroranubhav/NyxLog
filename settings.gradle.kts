@@ -20,5 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "NyxLog"
-include(":app")
+//include(":app")
 include(":debuggerduck")
